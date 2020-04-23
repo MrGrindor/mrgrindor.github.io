@@ -32,6 +32,13 @@
 	<div class= "main" id="map">
 		<img src="map.png" id="mapImg" style="z-index: -1;" onclick="main(event)">
 	</div>
+	<configuration>
+		<system.webServer>
+			<staticContent>
+				<mimeMap fileExtension=".ts" mimeType="application/x-typescript" />
+			</staticContent>
+		</system.webServer>
+	</configuration>
 	<script src="./DPSScript.ts"></script>
 </body>
 
