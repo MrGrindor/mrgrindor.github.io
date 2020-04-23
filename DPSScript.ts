@@ -41,7 +41,7 @@ function reset(){
 	pos1 = [null,null];
 	pos2 = [null,null];
 
-	var elements = Array.from(document.getElementById("map").getElementsByClassName("marker"));
+	var elements = document.getElementById("map").getElementsByClassName("marker");
 	var map = document.getElementById("map");
 
 	elements.forEach(element => {
