@@ -3,8 +3,9 @@
 <head>
 	<title>DPS Map</title>
 	<link rel="stylesheet" type="text/css" href="index.css">
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
+	
 <body>
 	<div class="sidenav">
 		<div class="positionbox">
@@ -23,60 +24,15 @@
 			<h3>Distance</h3>
 			<p id ="distance"></p>
 		</div>
+		<p id="debug">
+			debug
+		</p>
+		<p id="debug2">debug2</p>
 	</div>
 	<div class= "main" id="map">
-		<img class = "map" src="map.png" onclick="main(event)">
-		<img class = "marker" src="marker.png" id="marker1" class="marker">
-		<img class = "marker" src="marker.png" id="marker2" class="marker">
+		<img src="map.png" id="mapImg" style="z-index: -1;" onclick="main(event)">
 	</div>
-	<script type="text/javascript">
-		var pos1 = [null,null];
-		var pos2 = [null,null];
-
-		function main(event) {
-			getmouseposition(event);
-  			document.getElementById("pos1x").innerHTML ="X: "+ pos1[0];
-  			document.getElementById("pos1y").innerHTML ="Y: "+ pos1[1];
-  			putDownMarker(pos1[0],pos1[1],"marker1");
-  			if ((pos2[0]!=null) && (pos2[1]!=null)){
-  				document.getElementById("pos2x").innerHTML ="X: "+ pos2[0];
-  				document.getElementById("pos2y").innerHTML ="Y: "+ pos2[1];
-  				document.getElementById("distance").innerHTML = getDistance();
-  				putDownMarker(pos2[0],pos2[1],"marker2");
-  			}	
-		}
-		function getmouseposition(event) {
-			if ((pos1[0]==null) && (pos1[1]==null)){
-				pos1[0] = event.clientX;
-				pos1[1] = event.clientY;
-			}
-			else {
-				pos2[0] = event.clientX;
-				pos2[1] = event.clientY;
-			}	
-		}
-		function getDistance(){
-			return Math.sqrt((pos2[0]-pos1[0])*(pos2[0]-pos1[0])+(pos2[1]-pos1[1])*(pos2[1]-pos1[1]));
-		}
-
-		function putDownMarker(x,y, markerid){
-			var marker = document.getElementById("marker1");
-			marker.style.position = "absolute";
-			marker.style.left = y;
-			marker.style.top = x;
-			marker.style.zIndex = 1;
-		}
-		function reset(){
-			pos1 = [null,null];
-			pos2 = [null,null];
-			document.getElementById("pos1x").innerHTML = "X: Not set";
-  			document.getElementById("pos1y").innerHTML = "Y: Not set";
-  			document.getElementById("pos2x").innerHTML = "X: Not set";
-  			document.getElementById("pos2y").innerHTML = "Y: Not set";
-  			document.getElementById("distance").innerHTML = "0";
-		}
-
-	</script>
+	<script src="DPSScript.ts"></script>
 </body>
 
 </html>
