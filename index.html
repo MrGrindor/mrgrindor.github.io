@@ -25,7 +25,9 @@
 		</div>
 	</div>
 	<div class= "main" id="map">
-		<img src="map.png" onclick="main(event)">
+		<img class = "map" src="map.png" onclick="main(event)">
+		<img class = "marker" src="marker.png" id="marker1" class="marker">
+		<img class = "marker" src="marker.png" id="marker2" class="marker">
 	</div>
 	<script type="text/javascript">
 		var pos1 = [null,null];
@@ -35,14 +37,13 @@
 			getmouseposition(event);
   			document.getElementById("pos1x").innerHTML ="X: "+ pos1[0];
   			document.getElementById("pos1y").innerHTML ="Y: "+ pos1[1];
-  			putDownMarker(pos1[0],pos1[1]);
+  			putDownMarker(pos1[0],pos1[1],"marker1");
   			if ((pos2[0]!=null) && (pos2[1]!=null)){
   				document.getElementById("pos2x").innerHTML ="X: "+ pos2[0];
   				document.getElementById("pos2y").innerHTML ="Y: "+ pos2[1];
   				document.getElementById("distance").innerHTML = getDistance();
-  				putDownMarker(pos2[0],pos2[1]);
-  			}
-  			
+  				putDownMarker(pos2[0],pos2[1],"marker2");
+  			}	
 		}
 		function getmouseposition(event) {
 			if ((pos1[0]==null) && (pos1[1]==null)){
@@ -58,14 +59,12 @@
 			return Math.sqrt((pos2[0]-pos1[0])*(pos2[0]-pos1[0])+(pos2[1]-pos1[1])*(pos2[1]-pos1[1]));
 		}
 
-		function putDownMarker(x,y){
-			var marker = document.createElement("img");
-			var map = document.getElementById("map");
-			marker.src = "marker.png";
-			marker.margin-top = x-15;
-			marker.margin-side = y-15;
-			marker.z-index = 2;
-			map.appendChild(marker);
+		function putDownMarker(x,y, markerid){
+			var marker = document.getElementById("marker1");
+			marker.style.position = "absolute";
+			marker.style.left = y;
+			marker.style.top = x;
+			marker.style.zIndex = 1;
 		}
 		function reset(){
 			pos1 = [null,null];
