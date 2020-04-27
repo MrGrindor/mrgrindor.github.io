@@ -6,32 +6,16 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 	
-<body onload = "drawMap()">
+<body onload = "initialise()">
 
 	<div class="topnav" id = "topnav">
 		<h2>MEDIEVAL DPS</h2>
 	</div>
 	<div class="sidenav" id="sidenav">
-		<div class="positionbox">
-			<h3>Position 1</h3>
-			<p id="pos1x">X: Not set</p>
-			<p id="pos1y">Y: Not set</p>
-		</div>
-		
-		<div class="positionbox">
-			<h3>Position 2</h3>
-			<p id="pos2x">X: Not set</p>
-			<p id="pos2y">Y: Not set</p>
-		</div>
-		<button id="reset"> <h1>Reset</h1> </button>
-		<div class="positionbox">
-			<h3>Distance</h3>
-			<p id ="distance"></p>
-		</div>
-		<p id="debug">
-			debug
-		</p>
-		<p id="debug2">debug2</p>
+		<h3>
+			Plain Map
+		</h3>
+		Welcome to the DPS Website here you can see the plain map.
 	</div>
 	<div class= "main">
 		<svg id="s" version="1.1" width="4500" height="2400"
@@ -41,6 +25,7 @@
   		</svg>
 	</div>
 	<script src="./NewDPSScript.js"></script>
+	<script src="./mapgenerationscript.js"></script>
 </body>
 
 </html>

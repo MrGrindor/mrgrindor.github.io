@@ -72,5 +72,5 @@ polygon {
   fill: transparent;
 }
 .pod-wrap polygon:hover {
-  fill: #000000;
+  filter: brightness(2);
 }

@@ -1,8 +1,8 @@
 //new script for hexmap
 
-function drawMap() {
-    var map = document.getElementById("map");
-    radius = 20;
+function initialise() {
+    /*var map = document.getElementById("map");
+    radius = 10;
     for (col = 0; col < 128; col += 1) {
         for (row = 0; row < 80; row += 1) {
             var offset = (Math.sqrt(3) * radius) / 2;
@@ -13,13 +13,20 @@ function drawMap() {
             
             var polygon = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
             polygon.style.stroke = 'black';
-            polygon.style.strokeWidth = '2px';
+            polygon.style.strokeWidth = '0.5px';
             polygon.setAttribute('points', hexPoints(x, y, radius));
             polygon.setAttribute('class','polygon');
   
             map.appendChild(polygon);
         }
-    }
+    }*/
+
+    loadJSON(function(response) {
+        // Do Something with the response e.g.
+        //jsonresponse = JSON.parse(response);
+        tiles = JSON.parse(response);
+        updateMap(tiles);
+    });
     console.log("called");
 }
 
