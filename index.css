@@ -8,6 +8,19 @@
 .sidenav {
   height: 100%;
   width: 160px;
+  margin-top: 70px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #FFFFFF;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.topnav {
+  height: 70px;
+  width: 100%;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -41,6 +54,7 @@
 .main {
 	position: relative;
   margin-left: 160px; /* Same as the width of the sidenav */
+  margin-top: 75px; /* Same as height of topnav*/
   padding: 0px 10px;
   top:0;
   left:0;
@@ -49,4 +63,14 @@
 
 .marker {
 	position: absolute;
+}
+
+/* grid styling */
+polygon {
+  transition: 0.4s;
+  cursor: pointer;
+  fill: transparent;
+}
+.pod-wrap polygon:hover {
+  fill: #000000;
 }
